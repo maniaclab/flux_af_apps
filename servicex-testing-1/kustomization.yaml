@@ -6,12 +6,15 @@ metadata:
   namespace: servicex-testing-1
 resources:
   - servicex-repository.yaml
-    #- servicex-release.yaml
+  - servicex-release.yaml
   - servicex-testing-1-sealed-secret.yaml
-  - servicex-testing-1-sealed-slack.yaml
-  - servicex-testing-1-sealed-docker.yaml
-  - values.yaml
-  - slack-notification.yaml
-  - docker-webhook.yaml
+    #- servicex-testing-1-sealed-slack.yaml
+    #- servicex-testing-1-sealed-docker.yaml
+    #- slack-notification.yaml
+    #- docker-webhook.yaml
+configMapGenerator:
+  - name: servicex-values
+    files:
+      - values.yaml=values.yaml
 configurations:
   - kustomizeconfig.yaml
