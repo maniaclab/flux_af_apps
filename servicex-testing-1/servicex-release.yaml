@@ -122,8 +122,8 @@ spec:
     # remain in effect and cause problems due to new pods trying to use
     # the new password and then getting authorization error
     postgresql:
-      nodeSelector:
-        storage: "rook"
+      #nodeSelector:
+        #storage: "rook"
       persistence:
         enabled: false
         storageClass: rook-ceph-block
