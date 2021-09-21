@@ -39,7 +39,7 @@ spec:
       newSignupWebhook: "dummy"
       ingress:
         enabled: true
-        host: servicex-release-testing-1.servicex.af.uchicago.edu
+        host: servicex.af.uchicago.edu
         tls:
           enabled: true
           host: servicex-release-testing-1.servicex.af.uchicago.edu
