@@ -12,9 +12,9 @@ resources:
     #- servicex-testing-1-sealed-docker.yaml
     #- slack-notification.yaml
     #- docker-webhook.yaml
-configMapGenerator:
-  - name: servicex-values
-    files:
-      - values.yaml=values.yaml
-configurations:
-  - kustomizeconfig.yaml
+#configMapGenerator:
+#  - name: servicex-values
+#    files:
+#      - values.yaml=values.yaml
+#configurations:
+#  - kustomizeconfig.yaml
