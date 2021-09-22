@@ -137,6 +137,9 @@ spec:
     # Values for Minio Chart
     minio:
       existingSecret: servicex-secrets
+      persistence:
+        enabled: true
+        storageClass: local-storage 
       ingress:
         enabled: true
         annotations:
