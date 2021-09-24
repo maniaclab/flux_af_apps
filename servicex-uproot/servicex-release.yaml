@@ -128,7 +128,7 @@ spec:
       persistence:
         enabled: true
         storageClass: nfs
-      #master:
+      #master: 
       #  nodeSelector:
       #    kernel-ml: "true"
       #    storage: "rook"
