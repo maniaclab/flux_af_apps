@@ -126,8 +126,8 @@ spec:
       #nodeSelector:
         #storage: "rook"
       persistence:
-        enabled: false
-        storageClass: rook-ceph-block
+        enabled: true
+        storageClass: nfs
       #master:
       #  nodeSelector:
       #    kernel-ml: "true"
