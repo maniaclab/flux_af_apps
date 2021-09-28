@@ -79,8 +79,8 @@ spec:
     didFinder:
       rucio: 
         enabled: true
-        image: sslhep/servicex-did-finder
-        tag: move-to-metalink
+#         image: sslhep/servicex-did-finder
+#         tag: move-to-metalink this has been merged
     
     # Settings for the preflight checker - this usually uses the same image as
     # the transformer
