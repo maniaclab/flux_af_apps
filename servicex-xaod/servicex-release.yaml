@@ -80,7 +80,7 @@ spec:
       rucio: 
         enabled: true
         image: sslhep/servicex-did-finder
-        tag: prefix_fix
+        tag: prefix_support
     
     # Settings for the preflight checker - this usually uses the same image as
     # the transformer
