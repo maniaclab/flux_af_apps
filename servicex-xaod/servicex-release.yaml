@@ -129,7 +129,7 @@ spec:
         #storage: "rook"
       persistence:
         enabled: true
-        storageClass: nfs
+        storageClass: rook-ceph-block
       #master:
       #  nodeSelector:
       #    kernel-ml: "true"
