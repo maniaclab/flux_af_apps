@@ -35,8 +35,8 @@ spec:
       replicas: 1
       mailgunDomain: servicex.af.uchicago.edu
       # need dummy values so that it's in the config file 
-      slackSigningSecret: "dummy"
-      newSignupWebhook: "dummy"
+      slackSigningSecret: "dummy1"
+      newSignupWebhook: "dummy1"
       ingress:
         enabled: true
         host: servicex.af.uchicago.edu
