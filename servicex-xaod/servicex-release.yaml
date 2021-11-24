@@ -81,6 +81,7 @@ spec:
         enabled: true
         image: sslhep/servicex-did-finder
         tag: develop
+        pullPolicy: Always
         cachePrefix: root://192.170.227.122:1094/	
     
     # Settings for the preflight checker - this usually uses the same image as
