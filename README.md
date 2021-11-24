@@ -1,3 +1,8 @@
+<span style="color:blue">branch main tracks https://github.com/ssl-hep/flux_river_configs</span>
+
+<span style="color:blue">branch servicex-af holds what's deployed on af </span>
+
+
 # Introduction
 This repository holds configuration for servicex instances on river.  Each directory has configuration
 for a different instance.  The directory name corresponds to the namespace that
