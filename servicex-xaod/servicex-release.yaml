@@ -87,6 +87,7 @@ spec:
     # Settings for the preflight checker - this usually uses the same image as
     # the transformer
     preflight:
+      image: sslhep/servicex_func_adl_xaod_transformer:develop
       pullPolicy: Always
     
     #
