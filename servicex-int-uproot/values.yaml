@@ -20,8 +20,10 @@ spec:
     # want to have the option of delivering results as parquet files
     objectStore:
       enabled: true
+      internal: true
       publicURL: int-uproot-minio.servicex.ssl-hep.org
-
+      useTLS: false
+      useClientTLS: true
 
     # Settings for the Flask App
     app:
