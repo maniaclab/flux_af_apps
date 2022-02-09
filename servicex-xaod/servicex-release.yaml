@@ -10,7 +10,7 @@ spec:
   chart:
     spec:
       chart: servicex
-      version: "1.0.21"
+      version: "1.0.22"
       sourceRef:
         kind: HelmRepository
         name: servicex-repo
@@ -28,7 +28,7 @@ spec:
       publicURL: xaod-minio.servicex.af.uchicago.edu
       useTLS: false
       useClientTLS: true
-      
+
     # Settings for the Flask App
     app:
       adminEmail: fengping@uchicago.edu
@@ -86,12 +86,6 @@ spec:
         tag: develop
         pullPolicy: Always
         cachePrefix: root://192.170.240.18:1094//
-
-    # Settings for the preflight checker - this usually uses the same image as
-    # the transformer
-    preflight:
-      tag: develop
-      pullPolicy: Always
 
     #
     # Code Generator service
