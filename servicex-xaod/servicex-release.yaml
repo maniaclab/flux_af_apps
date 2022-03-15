@@ -91,10 +91,7 @@ spec:
     # Code Generator service
     codeGen:
       enabled: true
-      image: sslhep/servicex_code_gen_func_adl_xaod
-      # For uproot deployment
-      # image: sslhep/servicex_code_gen_func_adl_uproot
-#       tag: develop
+      image: sslhep/servicex_code_gen_atlas_xaod
       pullPolicy: Always
 
     # Pull policy for the worker pods - the image and version are specified as
