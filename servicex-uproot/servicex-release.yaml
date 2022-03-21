@@ -104,7 +104,7 @@ spec:
         maxReplicas: 750
       pullPolicy: Always
       cpuLimit: 1
-      defaultTransformerImage: sslhep/servicex_func_adl_uproot_transformer
+      defaultTransformerImage: sslhep/servicex_func_adl_uproot_transformer:20220311-2056-stable
 
     # enable postgresql backend for servicex
     postgres:
