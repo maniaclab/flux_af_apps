@@ -102,9 +102,9 @@ spec:
         cpuScaleThreshold: 30
         minReplicas: 10
         maxReplicas: 750
-      defaultTransformerImage: sslhep/servicex_func_adl_xaod_transformer
+      defaultTransformerImage: sslhep/servicex_func_adl_xaod_transformer:20220311-2056-stable
       # For uproot deployment
-      #  defaultTransformerImage: sslhep/servicex_func_adl_uproot_transformer
+      #  defaultTransformerImage: sslhep/servicex_func_adl_uproot_transformer:20220311-2056-stable
       pullPolicy: Always
       cpuLimit: 1
 
