@@ -10,7 +10,7 @@ spec:
   chart:
     spec:
       chart: servicex
-      version: "1.0.27"
+      version: "1.0.28"
       sourceRef:
         kind: HelmRepository
         name: servicex-repo
@@ -31,7 +31,7 @@ spec:
     # Settings for the Flask App
     app:
       adminEmail: fengping@uchicago.edu
-#       tag: develop
+      #       tag: develop
       pullPolicy: Always
       auth: true
       replicas: 1
@@ -82,7 +82,6 @@ spec:
       rucio:
         enabled:
         image: sslhep/servicex-did-finder
-#         tag: develop
         pullPolicy: Always
         cachePrefix: root://192.170.240.18:1094//
 
@@ -91,7 +90,6 @@ spec:
     codeGen:
       enabled: true
       image: sslhep/servicex_code_gen_func_adl_uproot
-#       tag: develop
       pullPolicy: Always
 
     # Pull policy for the worker pods - the image and version are specified as
@@ -104,7 +102,8 @@ spec:
         maxReplicas: 750
       pullPolicy: Always
       cpuLimit: 1
-      defaultTransformerImage: sslhep/servicex_func_adl_uproot_transformer:20220311-2056-stable
+      defaultTransformerImage: sslhep/servicex_func_adl_uproot_transformer
+      # defaultTransformerTag :20220311-2056-stable
 
     # enable postgresql backend for servicex
     postgres:
