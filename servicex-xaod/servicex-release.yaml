@@ -83,10 +83,13 @@ spec:
       rucio:
         enabled: true
         image: sslhep/servicex-did-finder
-        #         tag: develop
         pullPolicy: Always
         cachePrefix: root://192.170.240.18:1094//
 
+      CERNOpenData:
+        enabled: false
+        image: sslhep/servicex-did-finder-cernopendata
+        pullPolicy: Always
     #
     # Code Generator service
     codeGen:
