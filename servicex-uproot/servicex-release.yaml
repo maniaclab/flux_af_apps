@@ -137,7 +137,8 @@ spec:
       existingSecret: servicex-secrets
       persistence:
         enabled: true
-        storageClass: local-storage
+        # storageClass: local-storage
+        storageClass: rook-ceph-block
       ingress:
         enabled: true
         annotations:
