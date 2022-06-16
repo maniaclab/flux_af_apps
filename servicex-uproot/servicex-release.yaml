@@ -85,7 +85,7 @@ spec:
         cachePrefix: root://192.170.240.18:1094//
 
       CERNOpenData:
-        enabled: false
+        enabled: true
         image: sslhep/servicex-did-finder-cernopendata
         # tag: develop
         pullPolicy: Always
