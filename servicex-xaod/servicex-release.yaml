@@ -148,8 +148,8 @@ spec:
 
       persistence:
         enabled: true
-        # storageClass: local-storage
-        storageClass: rook-ceph-block
+        storageClass: local-storage
+        # storageClass: rook-ceph-block
 
       ingress:
         enabled: true
