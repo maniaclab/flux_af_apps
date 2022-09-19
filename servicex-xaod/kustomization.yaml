@@ -8,13 +8,7 @@ resources:
   - servicex-repository.yaml
   - servicex-release.yaml
   - servicex-sealed-secret.yaml
-    #- servicex-testing-1-sealed-slack.yaml
-    #- servicex-testing-1-sealed-docker.yaml
-    #- slack-notification.yaml
-    #- docker-webhook.yaml
-#configMapGenerator:
-#  - name: servicex-values
-#    files:
-#      - values.yaml=values.yaml
-#configurations:
-#  - kustomizeconfig.yaml
+  # - servicex-sealed-slack.yaml
+  # - slack-notification.yaml
+# configurations:
+#   - kustomizeconfig.yaml
