@@ -8,7 +8,6 @@ resources:
   - servicex-repository.yaml
   - servicex-release.yaml
   - servicex-sealed-secret.yaml
-  # - servicex-sealed-slack.yaml
-  # - slack-notification.yaml
+  - servicex-sealed-slack.yaml
 # configurations:
 #   - kustomizeconfig.yaml
