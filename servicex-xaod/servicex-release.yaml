@@ -20,9 +20,9 @@ spec:
     # want to have the option of delivering results as parquet files
     objectStore:
       enabled: true
-      internal: true
-      publicURL: xaod-minio.servicex.af.uchicago.edu
-      useTLS: false
+      internal: false
+      publicURL: s3.ssl-hep.org
+      useTLS: true
       useClientTLS: true
 
     # Settings for the Flask App
@@ -140,34 +140,34 @@ spec:
       auth:
         existingSecret: servicex-secrets
 
-      tls:
-        enabled: false
-      service:
-        ports:
-          api: 9000
+      # tls:
+      #   enabled: false
+      # service:
+      #   ports:
+      #     api: 9000
 
-      persistence:
-        enabled: true
-        storageClass: local-storage
-        # storageClass: rook-ceph-block
+      # persistence:
+      #   enabled: true
+      #   storageClass: local-storage
+      #   # storageClass: rook-ceph-block
 
-      ingress:
-        enabled: true
-        tls: true
-        annotations:
-          kubernetes.io/ingress.class: nginx
-          cert-manager.io/cluster-issuer: letsencrypt-prod
-          acme.cert-manager.io/http01-edit-in-place: "true"
-        hostname: "xaod-minio-console.servicex.af.uchicago.edu"
+      # ingress:
+      #   enabled: true
+      #   tls: true
+      #   annotations:
+      #     kubernetes.io/ingress.class: nginx
+      #     cert-manager.io/cluster-issuer: letsencrypt-prod
+      #     acme.cert-manager.io/http01-edit-in-place: "true"
+      #   hostname: "xaod-minio-console.servicex.af.uchicago.edu"
 
-      apiIngress:
-        enabled: true
-        tls: true
-        annotations:
-          kubernetes.io/ingress.class: nginx
-          cert-manager.io/cluster-issuer: letsencrypt-prod
-          acme.cert-manager.io/http01-edit-in-place: "true"
-        hostname: "xaod-minio.servicex.af.uchicago.edu"
+      # apiIngress:
+      #   enabled: true
+      #   tls: true
+      #   annotations:
+      #     kubernetes.io/ingress.class: nginx
+      #     cert-manager.io/cluster-issuer: letsencrypt-prod
+      #     acme.cert-manager.io/http01-edit-in-place: "true"
+      #   hostname: "xaod-minio.servicex.af.uchicago.edu"
 
     ###### Settings for Authenticating with the CERN Infrastructure #######
 
