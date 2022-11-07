@@ -5,12 +5,11 @@ metadata:
   name: uproot-atlas
   namespace: servicex-uproot
 spec:
-  interval: 1m
-  #serviceAccountName: servicex-uproot
+  interval: 5m
   chart:
     spec:
       chart: servicex
-      version: "v1.0.33-rc.8"
+      version: "v1.0.34"
       sourceRef:
         kind: HelmRepository
         name: servicex-repo
@@ -72,8 +71,6 @@ spec:
       auth:
         existingErlangSecret: servicex-secrets
         existingPasswordSecret: servicex-secrets
-      #nodeselector:
-      #storage: rook
 
     # Settings for the DID Finder
     didFinder:
