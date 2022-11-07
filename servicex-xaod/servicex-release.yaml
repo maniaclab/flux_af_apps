@@ -118,6 +118,9 @@ spec:
     # the new password and then getting authorization error
     postgresql:
       primary:
+        resources:
+          requests:
+            cpu: 8
         persistence:
           enabled: true
           storageClass: rook-ceph-block
