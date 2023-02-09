@@ -25,12 +25,12 @@ spec:
       useTLS: true
       useClientTLS: true
 
-     logging:
+    logging:
       logstash:
         enabled: true
         host: servicex.atlas-ml.org
         port: 5959
-        protocol: TCP   
+        protocol: TCP
 
     # Settings for the Flask App
     app:
@@ -39,7 +39,7 @@ spec:
       pullPolicy: Always
       auth: true
       replicas: 1
-      mailgunDomain:ervicex.af.uchicago.edu
+      mailgunDomain: servicex.af.uchicago.edu
       # need dummy values so that it's in the config file
       slackSigningSecret: "dummy1"
       newSignupWebhook: "dummy1"
@@ -78,8 +78,8 @@ spec:
       auth:
         existingErlangSecret: servicex-secrets
         existingPasswordSecret: servicex-secrets
-      #nodeselector:
-      #storage: rook
+      # nodeselector:
+      # storage: rook
 
     # Settings for the DID Finder
     didFinder:
@@ -98,7 +98,7 @@ spec:
       enabled: true
       image: sslhep/servicex_code_gen_atlas_xaod
       defaultScienceContainerImage: sslhep/sslhep/servicex_func_adl_xaod_transformer
-      defaultScienceContainerTag: v1.1.4       
+      defaultScienceContainerTag: v1.1.4
       pullPolicy: Always
 
     # Pull policy for the worker pods - the image and version are specified as
@@ -113,7 +113,7 @@ spec:
       cpuLimit: 1
       # Settings for the uproot transformer science container
       language: bash
-      exec: /generated/transform_single_file.sh              
+      exec: /generated/transform_single_file.sh
 
     # enable postgresql backend for servicex
     postgres:
@@ -193,7 +193,7 @@ spec:
       maxAge: 30
       maxSize: "1500G"
       normSize: "1T"
-        
+
     ###### Settings for Authenticating with the CERN Infrastructure #######
 
     gridAccount: xcache
