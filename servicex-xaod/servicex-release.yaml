@@ -9,7 +9,7 @@ spec:
   chart:
     spec:
       chart: servicex
-      version: "v1.0.34"
+      version: "v1.1.14"
       sourceRef:
         kind: HelmRepository
         name: servicex-repo
@@ -25,6 +25,13 @@ spec:
       useTLS: true
       useClientTLS: true
 
+     logging:
+      logstash:
+        enabled: true
+        host: servicex.atlas-ml.org
+        port: 5959
+        protocol: TCP   
+
     # Settings for the Flask App
     app:
       adminEmail: fengping@uchicago.edu
@@ -32,7 +39,7 @@ spec:
       pullPolicy: Always
       auth: true
       replicas: 1
-      mailgunDomain: servicex.af.uchicago.edu
+      mailgunDomain:ervicex.af.uchicago.edu
       # need dummy values so that it's in the config file
       slackSigningSecret: "dummy1"
       newSignupWebhook: "dummy1"
@@ -78,7 +85,6 @@ spec:
     didFinder:
       rucio:
         enabled: true
-        image: sslhep/servicex-did-finder
         pullPolicy: Always
         cachePrefix: root://192.170.240.18:1094//
 
@@ -91,6 +97,8 @@ spec:
     codeGen:
       enabled: true
       image: sslhep/servicex_code_gen_atlas_xaod
+      defaultScienceContainerImage: sslhep/sslhep/servicex_func_adl_xaod_transformer
+      defaultScienceContainerTag: v1.1.4       
       pullPolicy: Always
 
     # Pull policy for the worker pods - the image and version are specified as
@@ -101,9 +109,11 @@ spec:
         cpuScaleThreshold: 30
         minReplicas: 10
         maxReplicas: 750
-      defaultTransformerImage: sslhep/servicex_func_adl_xaod_transformer
       pullPolicy: Always
       cpuLimit: 1
+      # Settings for the uproot transformer science container
+      language: bash
+      exec: /generated/transform_single_file.sh              
 
     # enable postgresql backend for servicex
     postgres:
@@ -172,6 +182,18 @@ spec:
       #     acme.cert-manager.io/http01-edit-in-place: "true"
       #   hostname: "xaod-minio.servicex.af.uchicago.edu"
 
+
+    # Values for the Minio cleanup
+    # run once every 8 hours and prune storage to 1T if more than 1.5T is being
+    # used
+    # files more than 30 days old get removed
+    minioCleanup:
+      enabled: true
+      schedule: "0 */8 * * *"
+      maxAge: 30
+      maxSize: "1500G"
+      normSize: "1T"
+        
     ###### Settings for Authenticating with the CERN Infrastructure #######
 
     gridAccount: xcache

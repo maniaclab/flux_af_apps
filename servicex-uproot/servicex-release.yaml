@@ -9,7 +9,7 @@ spec:
   chart:
     spec:
       chart: servicex
-      version: "v1.0.34"
+      version: "v1.1.14"
       sourceRef:
         kind: HelmRepository
         name: servicex-repo
@@ -26,6 +26,7 @@ spec:
       useTLS: true
       useClientTLS: true
 
+        
     # Settings for the Flask App
     app:
       adminEmail: fengping@uchicago.edu
@@ -81,7 +82,7 @@ spec:
         cachePrefix: root://192.170.240.18:1094//
 
       CERNOpenData:
-        enabled: true
+        enabled: false
         image: sslhep/servicex-did-finder-cernopendata
         # tag: develop
         pullPolicy: Always
@@ -91,6 +92,8 @@ spec:
       enabled: true
       image: sslhep/servicex_code_gen_func_adl_uproot
       pullPolicy: Always
+      defaultScienceContainerImage: sslhep/servicex_func_adl_uproot_transformer
+      defaultScienceContainerTag: v1.1.4        
 
     # Pull policy for the worker pods - the image and version are specified as
     # part of the transform request
@@ -102,8 +105,10 @@ spec:
         maxReplicas: 750
       pullPolicy: Always
       cpuLimit: 1
-      defaultTransformerImage: sslhep/servicex_func_adl_uproot_transformer
-      # defaultTransformerTag :20220311-2056-stable
+
+       # Settings for the uproot transformer science container
+      language: python
+      exec: /generated/transform_single_file.py       
 
     # enable postgresql backend for servicex
     postgres:
@@ -143,6 +148,17 @@ spec:
       auth:
         existingSecret: servicex-secrets
 
+   # Values for the Minio cleanup
+    # run once every 8 hours and prune storage to 1T if more than 1.5T is being
+    # used
+    # files more than 30 days old get removed
+    minioCleanup:
+      enabled: true
+      schedule: "0 */8 * * *"
+      maxAge: 30
+      maxSize: "1500G"
+      normSize: "1T"
+          
     ###### Settings for Authenticating with the CERN Infrastructure #######
 
     gridAccount: xcache
