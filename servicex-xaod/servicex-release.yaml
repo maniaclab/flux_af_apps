@@ -87,7 +87,13 @@ spec:
         enabled: true
         pullPolicy: Always
         cachePrefix: root://192.170.240.18:1094//
-
+        servicex_latitude: 41.78
+        servicex_longitude: -87.7
+        memcache:
+          enabled: true
+          image: memcached
+            # tag: alpine
+          ttl: 86400  
       CERNOpenData:
         enabled: false
         image: sslhep/servicex-did-finder-cernopendata
