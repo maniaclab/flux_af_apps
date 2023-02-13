@@ -91,9 +91,10 @@ spec:
         servicex_longitude: -87.7
         memcache:
           enabled: true
-          image: memcached
+          image:
+            memcached
             # tag: alpine
-          ttl: 86400  
+          ttl: 86400
       CERNOpenData:
         enabled: false
         image: sslhep/servicex-did-finder-cernopendata
@@ -103,7 +104,7 @@ spec:
     codeGen:
       enabled: true
       image: sslhep/servicex_code_gen_atlas_xaod
-      defaultScienceContainerImage: sslhep/sslhep/servicex_func_adl_xaod_transformer
+      defaultScienceContainerImage: sslhep/servicex_func_adl_xaod_transformer
       defaultScienceContainerTag: v1.1.4
       pullPolicy: Always
 
@@ -187,7 +188,6 @@ spec:
       #     cert-manager.io/cluster-issuer: letsencrypt-prod
       #     acme.cert-manager.io/http01-edit-in-place: "true"
       #   hostname: "xaod-minio.servicex.af.uchicago.edu"
-
 
     # Values for the Minio cleanup
     # run once every 8 hours and prune storage to 1T if more than 1.5T is being
